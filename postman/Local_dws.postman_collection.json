@@ -1,0 +1,3905 @@
+{
+	"info": {
+		"_postman_id": "a5e0f872-8c8f-4e4d-be91-4f8f54457ebe",
+		"name": "Local_dws",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "7362465"
+	},
+	"item": [
+		{
+			"name": "BAcon_DWS",
+			"item": [
+				{
+					"name": "control",
+					"item": [
+						{
+							"name": "/v1/control/reboot",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {}
+							},
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Access-Control-Allow-Origin",
+										"value": "*",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "Access-Control-Allow-Headers",
+										"value": "Authorization, Content-Type",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "Access-Control-Allow-Methods",
+										"value": "GET, POST, PUT, DELETE, OPTIONS",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"crash_report\": false,\n    \"factory_reset\": false,\n    \"autorun\": \"disable\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://{{playerIpAddress}}/api/v1/control/reboot",
+								"description": "**Reboots the device**\n\n###### Request Body:\n\n\\[bool\\] crash_report: Saves a crash report to the brightsign-dumps folder\n\n\\[bool\\] factory_reset: Resets the device to factory defaults\n\n\\[string\\] autorun: Disables the autorun script if the string 'disable' is passed.\n\n###### Response Body:\n\n\\[bool\\] success: Flag indicating the success status of the operation\n\n\\[bool\\] reboot: Flag indicating whether or not the device needs to reboot to complete the operation."
+							},
+							"response": []
+						},
+						{
+							"name": "/v1/control/dws-password",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {}
+							},
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Access-Control-Allow-Origin",
+										"value": "*",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "Access-Control-Allow-Headers",
+										"value": "Authorization, Content-Type",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "Access-Control-Allow-Methods",
+										"value": "GET, POST, PUT, DELETE, OPTIONS",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"url": "http://{{playerIpAddress}}/api/v1/control/dws-password",
+								"description": "**Returns the local dws password information.**\n\n###### Response Body:\n\n\\[bool\\] success: Flag indicating the success status of the operation\n\n\\[object\\] password: An object containing isResultValid and isBlank.\n\n\\[bool\\] isResultValid: A flag indicating whether or not the password was successfully retrieved or checked for being blank.\n\n\\[bool\\] isBlank: Flag indicating whether or not a password is set"
+							},
+							"response": []
+						},
+						{
+							"name": "/v1/control/dws-password",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {}
+							},
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Access-Control-Allow-Origin",
+										"value": "*",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "Access-Control-Allow-Headers",
+										"value": "Authorization, Content-Type",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "Access-Control-Allow-Methods",
+										"value": "GET, POST, PUT, DELETE, OPTIONS",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"password\": \"\",\n    \"previous_password\": \"\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://{{playerIpAddress}}/api/v1/control/dws-password",
+								"description": "**Sets or removes the local dws password.**\n\n###### Request body:\n\n\\[string\\] password: Sets the new password or if left blank removes the password.\n\n\\[string\\] previous_password: The previous password set on the device. Left blank if no password is set.\n\n###### Response body:\n\n\\[bool\\] success: Flag indicating the success status of the operation\n\n\\[bool\\] reboot: Flag indicating whether or not the device needs to reboot to complete the operation."
+							},
+							"response": []
+						},
+						{
+							"name": "/v1/control/local-dws",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {}
+							},
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Access-Control-Allow-Origin",
+										"value": "*",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "Access-Control-Allow-Headers",
+										"value": "Authorization, Content-Type",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "Access-Control-Allow-Methods",
+										"value": "GET, POST, PUT, DELETE, OPTIONS",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"url": "http://{{playerIpAddress}}/api/v1/control/local-dws",
+								"description": "***NOTE: This is meant to be used by the Remote DWS/BSN. Not by users.***\n\n**Gets whether or not the dws is enabled.**\n\n###### Response body:\n\n\\[bool\\] success: Flag that indicates the success status of the operation\n\n\\[bool\\] value: Flag indicating whether or not the the local dws is enabled"
+							},
+							"response": []
+						},
+						{
+							"name": "/v1/control/local-dws",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {}
+							},
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Access-Control-Allow-Origin",
+										"value": "*",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "Access-Control-Allow-Headers",
+										"value": "Authorization, Content-Type",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "Access-Control-Allow-Methods",
+										"value": "GET, POST, PUT, DELETE, OPTIONS",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"enable\": true}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://{{playerIpAddress}}/api/v1/control/local-dws",
+								"description": "***NOTE: This is meant to be used by the Remote DWS/BSN. Not by users.***\n\n**Enables or disables the LDWS**\n\n###### Request body:\n\n\\[bool\\] enable: Enables or disables the LDWS\n\n###### Response body:\n\n\\[bool\\] success: Flag indicating the success status of the operation\n\n\\[bool\\] reboot: Flag indicating whether or not the device needs to reboot to complete the operation.\n\nWarning: Once the local dws is disabled it's not possible to re-enable it using this api. To re-enable the dws either use the remote dws if available or go to the brightsign prompt and run:\n\nregistry write networking dwse true"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "files",
+					"item": [
+						{
+							"name": "/v1/files/*",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {}
+							},
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Access-Control-Allow-Origin",
+										"value": "*",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "Access-Control-Allow-Headers",
+										"value": "Authorization, Content-Type",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "Access-Control-Allow-Methods",
+										"value": "GET, POST, PUT, DELETE, OPTIONS",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://{{playerIpAddress}}/api/v1/files/:drive",
+									"protocol": "http",
+									"host": [
+										"{{playerIpAddress}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"files",
+										":drive"
+									],
+									"query": [
+										{
+											"key": "raw",
+											"value": null,
+											"disabled": true
+										}
+									],
+									"variable": [
+										{
+											"key": "drive",
+											"value": null
+										}
+									]
+								},
+								"description": "**Gets a list of files and directories in the specified directory.**\n\n###### Response body:\n\n\\[Array \\[File\\]\\] files array\n\n\\[object File\\]\n\n\\[string\\] name: File name\n\n\\[string\\] type: File type\n\n\\[string\\] path: File path\n\n\\[object Stat\\] stat: File information from fs module\n\n\\[/object File\\]\n\n\\[/Array \\[File\\]\\]"
+							},
+							"response": []
+						},
+						{
+							"name": "/v1/files/*",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {}
+							},
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Access-Control-Allow-Origin",
+										"value": "*",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "Access-Control-Allow-Headers",
+										"value": "Authorization, Content-Type",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "Access-Control-Allow-Methods",
+										"value": "GET, POST, PUT, DELETE, OPTIONS",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"api.txt\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://{{playerIpAddress}}/api/v1/files/sd/api.json",
+								"description": "**Renames a file**\n\n###### Request body:\n\n\\[string\\] name: New name for the file\n\n###### Response body:\n\n\\[bool\\] success: Flag indicating the success status of the operation"
+							},
+							"response": []
+						},
+						{
+							"name": "/v1/files/*",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {}
+							},
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Access-Control-Allow-Origin",
+										"value": "*",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "Access-Control-Allow-Headers",
+										"value": "Authorization, Content-Type",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "Access-Control-Allow-Methods",
+										"value": "GET, POST, PUT, DELETE, OPTIONS",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"url": "http://{{playerIpAddress}}/api/v1/files/sd/api.json",
+								"description": "**Deletes a file**\n\n###### Response body:\n\n\\[bool\\] success: Flag indicating the success status of the operation"
+							},
+							"response": []
+						},
+						{
+							"name": "/v1/files/*",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {}
+							},
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Access-Control-Allow-Origin",
+										"value": "*",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "Access-Control-Allow-Headers",
+										"value": "Authorization, Content-Type",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "Access-Control-Allow-Methods",
+										"value": "GET, POST, PUT, DELETE, OPTIONS",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "",
+											"type": "file",
+											"src": []
+										}
+									]
+								},
+								"url": {
+									"raw": "http://{{playerIpAddress}}/api/v1/files/:drive",
+									"protocol": "http",
+									"host": [
+										"{{playerIpAddress}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"files",
+										":drive"
+									],
+									"variable": [
+										{
+											"key": "drive",
+											"value": null
+										}
+									]
+								},
+								"description": "**Uploads files to the specified drive**\n\n###### Request body (form-data):\n\n\\[file\\]\n\n###### Response body:\n\n\\[bool\\] success: Flag indicating the success status of the operation\n\n\\[Array string\\] results: Array containing the names of the uploaded file(s)\n\nThis is the same as /v1/files/sd."
+							},
+							"response": []
+						},
+						{
+							"name": "/v1/files/sd",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {}
+							},
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Access-Control-Allow-Origin",
+										"value": "*",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "Access-Control-Allow-Headers",
+										"value": "Authorization, Content-Type",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "Access-Control-Allow-Methods",
+										"value": "GET, POST, PUT, DELETE, OPTIONS",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "",
+											"type": "file",
+											"src": []
+										}
+									]
+								},
+								"url": "http://{{playerIpAddress}}/api/v1/files/sd",
+								"description": "**Uploads local file(s) to specified drive**\n\n###### Request Body (form-data):\n\n\\[file\\]\n\n###### Response body:\n\n\\[bool\\] success: Flag indicating the success status of the operation\n\n\\[Array string\\] results: Array containing the names of the uploaded file(s)\n\nIt is possible to upload multiple files as such:\n\n`curl -X PUT http://device.local/api/v1/files/sd -H 'x-api-key: key' -F 'upload=@localfile' -F 'upload2=@localfile'`"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "diagnostics",
+					"item": [
+						{
+							"name": "/v1/diagnostics",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {}
+							},
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Access-Control-Allow-Origin",
+										"value": "*",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "Access-Control-Allow-Headers",
+										"value": "Authorization, Content-Type",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "Access-Control-Allow-Methods",
+										"value": "GET, POST, PUT, DELETE, OPTIONS",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"url": "http://{{playerIpAddress}}/api/v1/diagnostics",
+								"description": "**Runs a check on attached network interfaces and returns the results.**\n\n###### Response body:\n\n  \n\\[Diagnostics\\] - An object containing the following key - value pairs:  \n\\[string\\] diagnosis: String indicating the status of the interface  \n\\[array\\] log: An array of test objects. The object consists of:  \n\\[string\\] name: The name of the test  \n\\[bool\\] pass: The result of the test  \n\\[string\\] result: The test output or error message.  \n\\[/array\\]  \n\\[bool\\] ok: Flag indicating the status of the interface.  \n\\[/Diagnostics\\]\n\n  \n\\[Diagnostics\\] ethernet: Contains the diagnostics info for ethernet  \n\\[Diagnostics\\] wifi: Contains the diagnostics info for wifi.  \n\\[Diagnostics\\] modem: Contains the diagnostics info for modem.  \n\\[Diagnostics\\] internet: Contains diagnostics information for internet connectivity"
+							},
+							"response": []
+						},
+						{
+							"name": "/v1/diagnostics/dns-lookup/*",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {}
+							},
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Access-Control-Allow-Origin",
+										"value": "*",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "Access-Control-Allow-Headers",
+										"value": "Authorization, Content-Type",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "Access-Control-Allow-Methods",
+										"value": "GET, POST, PUT, DELETE, OPTIONS",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://{{playerIpAddress}}/api/v1/diagnostics/dns-lookup/:domain_name",
+									"protocol": "http",
+									"host": [
+										"{{playerIpAddress}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"diagnostics",
+										"dns-lookup",
+										":domain_name"
+									],
+									"variable": [
+										{
+											"key": "domain_name",
+											"value": "google.com"
+										}
+									]
+								},
+								"description": "**Runs a DNS lookup on the device for the provided domain name and returns the results as a json object.**"
+							},
+							"response": []
+						},
+						{
+							"name": "/v1/diagnostics/ping/*",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {}
+							},
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Access-Control-Allow-Origin",
+										"value": "*",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "Access-Control-Allow-Headers",
+										"value": "Authorization, Content-Type",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "Access-Control-Allow-Methods",
+										"value": "GET, POST, PUT, DELETE, OPTIONS",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://{{playerIpAddress}}/api/v1/diagnostics/ping/:ip_address",
+									"protocol": "http",
+									"host": [
+										"{{playerIpAddress}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"diagnostics",
+										"ping",
+										":ip_address"
+									],
+									"variable": [
+										{
+											"key": "ip_address",
+											"value": "192.168.50.137",
+											"description": "Local dns server"
+										}
+									]
+								},
+								"description": "**Pings the address passed in the request and returns detailed results in JSON format.**\n\nThis only takes IP addresses."
+							},
+							"response": []
+						},
+						{
+							"name": "/v1/diagnostics/trace-route/*",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {}
+							},
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Access-Control-Allow-Origin",
+										"value": "*",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "Access-Control-Allow-Headers",
+										"value": "Authorization, Content-Type",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "Access-Control-Allow-Methods",
+										"value": "GET, POST, PUT, DELETE, OPTIONS",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://{{playerIpAddress}}/api/v1/diagnostics/trace-route/:domain_name",
+									"protocol": "http",
+									"host": [
+										"{{playerIpAddress}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"diagnostics",
+										"trace-route",
+										":domain_name"
+									],
+									"query": [
+										{
+											"key": "resolveAddress",
+											"value": "true",
+											"disabled": true
+										}
+									],
+									"variable": [
+										{
+											"key": "domain_name",
+											"value": "https://google.com"
+										}
+									]
+								},
+								"description": "**Runs trace-route on the player and returns detailed results in JSON format.**\n\nYou can optionally pass the boolean query parameter `?resolveAddress` to resolve IP addresses in the result."
+							},
+							"response": []
+						},
+						{
+							"name": "/v1/diagnostics/network-neighrborhood",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {}
+							},
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Access-Control-Allow-Origin",
+										"value": "*",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "Access-Control-Allow-Headers",
+										"value": "Authorization, Content-Type",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "Access-Control-Allow-Methods",
+										"value": "GET, POST, PUT, DELETE, OPTIONS",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"url": "http://{{playerIpAddress}}/api/v1/diagnostics/network-neighborhood",
+								"description": "**Returns the network neighborhood information of the player.**"
+							},
+							"response": []
+						},
+						{
+							"name": "/v1/diagnostics/network-configuration",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {}
+							},
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Access-Control-Allow-Origin",
+										"value": "*",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "Access-Control-Allow-Headers",
+										"value": "Authorization, Content-Type",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "Access-Control-Allow-Methods",
+										"value": "GET, POST, PUT, DELETE, OPTIONS",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://{{playerIpAddress}}/api/v1/diagnostics/network-configuration/:interface",
+									"protocol": "http",
+									"host": [
+										"{{playerIpAddress}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"diagnostics",
+										"network-configuration",
+										":interface"
+									],
+									"variable": [
+										{
+											"key": "interface",
+											"value": "wifi"
+										}
+									]
+								},
+								"description": "**Gets a the players network configuration.**\n\nThe interface parameter can take either \"eth0\", \"wlan0\", \"ppp0\", \"wifi\", \"modem\" or \"ethernet\" and will return configuration information for the provided interface.\n\nThe returned body consists of two output formats. \"text\" which is the network configuration as a string and \"output\" which is the network configuration as JSON.\n\nThe JSON object is is the configuration format the can be used as the body for the network-configuration PUT request.\n\nNetwork configuration parameters can be found: [https://brightsign.atlassian.net/wiki/spaces/DOC/pages/370678197/networkconfiguration](https://nam04.safelinks.protection.outlook.com/?url=https://brightsign.atlassian.net/wiki/spaces/DOC/pages/370678197/networkconfiguration&data=05|01|dmloperena@brightsign.biz|2f377b01f19640949b0c08da37967a0a|8fbcdf641ab847cebdc743e23b04fb3c|0|0|637883416760658326|Unknown|TWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0=|3000|||&sdata=PTPniUmYT74ccqO3G6zh/aryr+c2FohhJXoFveezGpQ=&reserved=0)"
+							},
+							"response": []
+						},
+						{
+							"name": "/v1/diagnostics/network-configuration/:interfaceName",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{playerIpAddress}}/api/v1/diagnostics/network-configuration/:interface",
+									"protocol": "https",
+									"host": [
+										"{{playerIpAddress}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"diagnostics",
+										"network-configuration",
+										":interface"
+									],
+									"variable": [
+										{
+											"key": "interface",
+											"value": "eth0"
+										}
+									]
+								},
+								"description": "**Configures the provided interfaces on the player.**\n\nApplying network configuration via this API will only work if there is no WPA/802.1x configured on the interface."
+							},
+							"response": []
+						},
+						{
+							"name": "/v1/diagnostics/interfaces",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {}
+							},
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Access-Control-Allow-Origin",
+										"value": "*",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "Access-Control-Allow-Headers",
+										"value": "Authorization, Content-Type",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "Access-Control-Allow-Methods",
+										"value": "GET, POST, PUT, DELETE, OPTIONS",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"url": "http://{{playerIpAddress}}/api/v1/diagnostics/interfaces/",
+								"description": "**Returns list of applied network interfaces on the player.**\n\n###### Response body:\n\n\\[\\[string\\]\\] result: An array of applied interface names."
+							},
+							"response": []
+						},
+						{
+							"name": "/v1/diagnostics/packet-capture",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {}
+							},
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Access-Control-Allow-Origin",
+										"value": "*",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "Access-Control-Allow-Headers",
+										"value": "Authorization, Content-Type",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "Access-Control-Allow-Methods",
+										"value": "GET, POST, PUT, DELETE, OPTIONS",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"url": "http://{{playerIpAddress}}/api/v1/diagnostics/packet-capture",
+								"description": "**Checks for a running packet capture**\n\n###### Response body:\n\n\\[int\\] status: The status code\n\n\\[bool\\] is_running: A flag indicating whether or not a packet capture is currently running."
+							},
+							"response": []
+						},
+						{
+							"name": "/v1/diagnostics/packet-capture",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"filename\": \"newcap.pcap\",\n    \"interface\": \"eth0\",\n    \"duration\": 1200,\n    \"maxpackets\": 0,\n    \"snaplen\": 0,\n    \"filter\": \"\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://{{playerIpAddress}}/api/v1/diagnostics/packet-capture",
+								"description": "**Starts a packet capture.**\n\n###### Request body:\n\n\\[string\\] filename: Name to give the pcap file.\n\n\\[string\\] interface: Interface to run the capture on.\n\n\\[int\\] duration: Capture period in seconds.\n\n\\[int\\] maxpackets: The maximum number of packets to capture.\n\n\\[int\\] snaplen: The maximum size of each packet. 0 will capture the entire packet no matter the size.\n\n\\[string\\] filter: Conditional filtering of packets. Uses pcap syntax.\n\n###### Response body:\n\n\\[int\\] statusCode: The status code for the request.\n\n\\[bool\\] is_running: A flag indicating whether or not the packet capture is running."
+							},
+							"response": []
+						},
+						{
+							"name": "/v1/diagnostics/packet-capture",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"url": "http://{{playerIpAddress}}/api/v1/diagnostics/packet-capture",
+								"description": "**Stops a running packet capture.**\n\n###### Response body:\n\n\\[int\\] statusCode: The status code for the request.\n\n\\[bool\\] is_running: A flag indicating whether or not a capture is running."
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "logs",
+					"item": [
+						{
+							"name": "/v1/logs",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {}
+							},
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Access-Control-Allow-Origin",
+										"value": "*",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "Access-Control-Allow-Headers",
+										"value": "Authorization, Content-Type",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "Access-Control-Allow-Methods",
+										"value": "GET, POST, PUT, DELETE, OPTIONS",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"url": "http://{{playerIpAddress}}/api/v1/logs",
+								"description": "**Returns the device serial log as text.**\n\nResponse body:\n\n\\[string\\] result: The device log."
+							},
+							"response": []
+						},
+						{
+							"name": "/v1/logs/crash-dumps",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {}
+							},
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Access-Control-Allow-Origin",
+										"value": "*",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "Access-Control-Allow-Headers",
+										"value": "Authorization, Content-Type",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "Access-Control-Allow-Methods",
+										"value": "GET, POST, PUT, DELETE, OPTIONS",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"url": "http://{{playerIpAddress}}/api/v1/logs/crash-dumps",
+								"description": "**Returns a list of crash-dumps.**\n\nResponse body:\n\n\\[CrashDump\\]\n\n\\[string\\] filename: The name of the dump.\n\n\\[string\\] ctime: The change time for the dump.\n\n\\[/CrashDump\\]\n\n\\[\\[CrashDump\\]\\] result: A list of crash dumps on the device."
+							},
+							"response": []
+						},
+						{
+							"name": "/v1/logs/crash-dumps/*",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {}
+							},
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Access-Control-Allow-Origin",
+										"value": "*",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "Access-Control-Allow-Headers",
+										"value": "Authorization, Content-Type",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "Access-Control-Allow-Methods",
+										"value": "GET, POST, PUT, DELETE, OPTIONS",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"url": "http://{{playerIpAddress}}/api/v1/logs/crash-dumps/crash-dump",
+								"description": "**Returns a JSON object containing the dump zip as well as file and type information.**\n\nResponse body:\n\n\\[CrashDump\\]\n\n\\[string\\] name: The name of the dump file.\n\n\\[string\\] contents: The dump file bzip2 as a base64 encoded string\n\n\\[string\\] mimeType: The type of file the dump is.\n\n\\[/CrashDump\\]\n\n\\[CrashDump\\] result: The retrieved dump zip and file information."
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "system",
+					"item": [
+						{
+							"name": "/v1/system/supervisor/logging",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"url": "http://{{playerIpAddress}}/api/v1/system/supervisor/logging",
+								"description": "**Gets the current log level and name.**\n\n###### Response body:\n\n\\[int\\] status: The status code for the request.\n\n\\[int\\] level: The log level set on the player.\n\n\\[string\\] name: The friendly name for the logging level."
+							},
+							"response": []
+						},
+						{
+							"name": "/v1/system/supervisor/logging",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"level\": 0}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://{{playerIpAddress}}/api/v1/system/supervisor/logging",
+								"description": "**Sets the logging level for the supervisor.**\n\n###### Request body:\n\n\\[int\\] level: Number representing the log level.\n\nPossible values:\n\n0 - error\n\n1 - warn\n\n2 - info\n\n3 - trace\n\nResponds with the status and an error message if the PUT request failed."
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "registry",
+					"item": [
+						{
+							"name": "/v1/registry",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"url": "http://{{playerIpAddress}}/api/v1/registry",
+								"description": "**Returns a complete registry dump.**"
+							},
+							"response": []
+						},
+						{
+							"name": "/v1/registry/recovery_url",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "http://{{playerIpAddress}}/api/v1/registry/recovery_url",
+								"description": "**Gets the current device recovery url.**\n\n###### Response body:\n\n  \n\\[bool\\] success: A flag indicating whether the request was successful.\n\n\\[string\\] value: The recovery url"
+							},
+							"response": []
+						},
+						{
+							"name": "/v1/registry/recovery_url",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"url\": \"https://dst.bsn.cloud/recovery/recovery.ashx\"}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://{{playerIpAddress}}/api/v1/registry/recovery_url",
+								"description": "**Sets the device recovery url.**\n\n###### Request body:\n\n\\[string\\] url: The recovery url\n\n###### Response body:\n\n\\[bool\\] success: A flag indicating whether the write was successful."
+							},
+							"response": []
+						},
+						{
+							"name": "/v1/registry/:section",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://{{playerIpAddress}}/api/v1/registry/:section",
+									"protocol": "http",
+									"host": [
+										"{{playerIpAddress}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"registry",
+										":section"
+									],
+									"variable": [
+										{
+											"key": "section",
+											"value": null
+										}
+									]
+								},
+								"description": "**Responds with the specified registry section as json.**"
+							},
+							"response": []
+						},
+						{
+							"name": "/v1/registry/:section/:key",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://{{playerIpAddress}}/api/v1/registry/:section/:key",
+									"protocol": "http",
+									"host": [
+										"{{playerIpAddress}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"registry",
+										":section",
+										":key"
+									],
+									"variable": [
+										{
+											"key": "section",
+											"value": null
+										},
+										{
+											"key": "key",
+											"value": null
+										}
+									]
+								},
+								"description": "**Responds with the value for the specified key.**"
+							},
+							"response": []
+						},
+						{
+							"name": "/v1/registry/:section/:key",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"value\": \"no\"}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{playerIpAddress}}/api/v1/registry/:section/:key",
+									"protocol": "http",
+									"host": [
+										"{{playerIpAddress}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"registry",
+										":section",
+										":key"
+									],
+									"variable": [
+										{
+											"key": "section",
+											"value": null
+										},
+										{
+											"key": "key",
+											"value": null
+										}
+									]
+								},
+								"description": "**Sets the value for a specified key.**\n\nIf the key does not exist in the registry, it will be created and have its value set. If it does exist then the value will be overridden to the new value.\n\n###### Request body:\n\n\\[string\\] value: The value to set the given key to.\n\n###### Response body:\n\n\\[bool\\] success: A flag indicating whether or not the value was written successfully.\n\n\\[string\\] section: The registry section the value was written to.\n\n\\[string\\] key: The key for the written value.\n\n\\[string\\] value: The value written to the specified key."
+							},
+							"response": []
+						},
+						{
+							"name": "/v1/registry/:section/:key",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://{{playerIpAddress}}/api/v1/registry/:section/:key",
+									"protocol": "http",
+									"host": [
+										"{{playerIpAddress}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"registry",
+										":section",
+										":key"
+									],
+									"variable": [
+										{
+											"key": "section",
+											"value": null
+										},
+										{
+											"key": "key",
+											"value": null
+										}
+									]
+								},
+								"description": "**Removes the specified registry key.**\n\n###### Response body:\n\n\\[bool\\] success: A flag indicating whether or not the key was removed successfully.\n\n\\[string\\] section: The registry section the key was deleted from.\n\n\\[string\\] key: The name of the deleted key."
+							},
+							"response": []
+						},
+						{
+							"name": "/v1/registry/:section",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://{{playerIpAddress}}/api/v1/registry/:section",
+									"protocol": "http",
+									"host": [
+										"{{playerIpAddress}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"registry",
+										":section"
+									],
+									"variable": [
+										{
+											"key": "section",
+											"value": null
+										}
+									]
+								},
+								"description": "**Deletes the specified registry section.**\n\n###### Response body:\n\n\\[bool\\] success: A flag indicating whether or not the section could be deleted successfully.\n\n\\[string\\] section: The name of the deleted section."
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "video",
+					"item": [
+						{
+							"name": "/v1/video/:connector/output/:device",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"url": "http://{{playerIpAddress}}/api/v1/video/hdmi/output/0",
+								"description": "**Dumps the complete output information for the specified device.**"
+							},
+							"response": []
+						},
+						{
+							"name": "/v1/video/:connector/output/:device/edid",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"url": "http://{{playerIpAddress}}/api/v1/video/hdmi/output/0/edid",
+								"description": "**Gets the edid information for the specified device.**"
+							},
+							"response": []
+						},
+						{
+							"name": "/v1/video/:connector/output/:device/power-save",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"url": "http://{{playerIpAddress}}/api/v1/video/hdmi/output/0/power-save",
+								"description": "**Gets the power-save status for the specified device.**\n\n###### Response body:\n\n\\[bool\\] is_connected: The connection status for the device.\n\n\\[bool\\] is_powered: Whether or not the connected screen is powered on.\n\n\\[bool\\] enabled: Whether or not power save mode is enabled."
+							},
+							"response": []
+						},
+						{
+							"name": "/v1/video/:connector/output/:device/power-save",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"enabled\": false}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://{{playerIpAddress}}/api/v1/video/hdmi/output/0/power-save",
+								"description": "**Sets power-save mode.**\n\n###### Request body:\n\n\\[bool\\] enabled: Sets power-save mode.\n\n###### Response body:\n\n\\[bool\\] result: Whether or not the power save mode was successfully set."
+							},
+							"response": []
+						},
+						{
+							"name": "/v1/video/:connector/output/:device/modes",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"url": "http://{{playerIpAddress}}/api/v1/video/hdmi/output/0/modes",
+								"description": "**Dumps a complete list of supported video modes.**"
+							},
+							"response": []
+						},
+						{
+							"name": "/v1/video/:connector/output/:device/mode",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"url": "http://{{playerIpAddress}}/api/v1/video/hdmi/output/0/mode",
+								"description": "**Gets the currently set video mode.**\n\n###### Response body:\n\n\\[Mode\\]\n\n\\[string\\] colorDepth\n\n\\[string\\] colorSpace\n\n\\[bool\\] dropFrame\n\n\\[int\\] frequency\n\n\\[int\\] graphicsPlaneHeight\n\n\\[int\\] graphicsPlaneWidth\n\n\\[int\\] height\n\n\\[bool\\] interlaced\n\n\\[string\\] modeName\n\n\\[bool\\] overscan\n\n\\[bool\\] preferred\n\n\\[int\\] width\n\n\\[/Mode\\]\n\n\\[bool\\] isAutoMode: ?\n\n\\[string\\] name: The currently set mode as a string.\n\n\\[string\\] width: The width for the set mode.\n\n\\[string\\] height: The height for the set mode.\n\n\\[string\\] frames: The framerate for the set mode.\n\n\\[string\\] scan: The scan type as a character.\n\n\\[Mode\\] mode:"
+							},
+							"response": []
+						},
+						{
+							"name": "/v1/video/:connector/output/:device/mode",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"name\": {\n                \"colorDepth\": \"8bit\",\n                \"colorSpace\": \"rgb\",\n                \"dropFrame\": false,\n                \"frequency\": 60,\n                \"graphicsPlaneHeight\": 1200,\n                \"graphicsPlaneWidth\": 1920,\n                \"height\": 1200,\n                \"interlaced\": false,\n                \"modeName\": \"1920x1200x60p\",\n                \"overscan\": false,\n                \"preferred\": false,\n                \"width\": 1920\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://{{playerIpAddress}}/api/v1/video/hdmi/output/0/mode",
+								"description": "**Sets the video mode using the provided video mode object.**\n\nValid modes can be retrieved by sending a GET request to this endpoint. While all of the video mode keys can be provided, the only value that is required or used is modeName\n\n###### Request body:\n\n\\[VideoMode\\]\n\noptional \\[string\\] colorDepth\n\noptional \\[string\\] colorSpace\n\noptional \\[bool\\] dropFrame: A flag indicating whether or not drop frame is used.\n\noptional \\[int\\] frequency: The frame rate\n\noptional \\[int\\] graphicsPlaneHeight\n\noptional \\[int\\] graphicsPlaneWidth\n\noptional \\[int\\] height\n\noptional \\[bool\\] interlaced: A flag indicating whether interlaced is used.\n\nrequired \\[string\\] modeName: Video mode friendly name.\n\noptional \\[bool\\] overscan: A flag indicating whether or not overscan is used.\n\noptional \\[bool\\] preferred: A flag indicating whether or not this is the preferred video mode.\n\noptional \\[int\\] width\n\n\\[/VideoMode\\]\n\n\\[VideoMode\\] name: The video mode to use.\n\n###### Response body:\n\n\\[bool\\] success: A flag indicating whether or not the operation succeeded.\n\n\\[bool\\] reboot: A flag indicating whether or not the device needs to be rebooted."
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "v1/*",
+					"item": [
+						{
+							"name": "/v1/",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {}
+							},
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Access-Control-Allow-Origin",
+										"value": "*",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "Access-Control-Allow-Headers",
+										"value": "Authorization, Content-Type",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "Access-Control-Allow-Methods",
+										"value": "GET, POST, PUT, DELETE, OPTIONS",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"url": "http://{{playerIpAddress}}/api/v1/",
+								"description": "**List all available routes**\n\nThis will list available routes as well as what methods they accept."
+							},
+							"response": []
+						},
+						{
+							"name": "/keys.json",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Received key\", () => {",
+											"    pm.response.to.have.status(200);",
+											"    if (pm.response.code === 200) {",
+											"        console.log('Checking json');",
+											"        let data = pm.response.json();",
+											"        pm.expect(data.key).to.be.an('string');",
+											"        if ('key' in data) {",
+											"            console.log('Setting collections api-key');",
+											"            pm.collectionVariables.set('x-api-key', data.key);",
+											"        } else {",
+											"            console.error('Failed to set collections api-key')",
+											"        }",
+											"    } else {",
+											"        console.error('Unexpected status code' + pm.response.status);",
+											"    }",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {}
+							},
+							"request": {
+								"auth": {
+									"type": "digest",
+									"digest": {
+										"password": "{{password}}",
+										"username": "{{username}}",
+										"realm": "brightsign",
+										"algorithm": "MD5"
+									}
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Access-Control-Allow-Origin",
+										"value": "*",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "Access-Control-Allow-Headers",
+										"value": "Authorization, Content-Type",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "Access-Control-Allow-Methods",
+										"value": "GET, POST, PUT, DELETE, OPTIONS",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "",
+										"value": "",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": "http://{{playerIpAddress}}/keys.json",
+								"description": "**Returns the devices api key(s).**\n\nThis can then be included in the header as x-api-key for later requests in place digest authentication."
+							},
+							"response": []
+						},
+						{
+							"name": "/v1/health",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {}
+							},
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Access-Control-Allow-Origin",
+										"value": "*",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "Access-Control-Allow-Headers",
+										"value": "Authorization, Content-Type",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "Access-Control-Allow-Methods",
+										"value": "GET, POST, PUT, DELETE, OPTIONS",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"url": "http://{{playerIpAddress}}/api/v1/health",
+								"description": "**Returns the device's status and statusTime.**\n\n###### Response body:\n\n\\[string\\] status: The current status of the device.\n\n\\[string\\] statusTime: The time on the device."
+							},
+							"response": []
+						},
+						{
+							"name": "/v1/download-firmware",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {}
+							},
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Access-Control-Allow-Origin",
+										"value": "*",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "Access-Control-Allow-Headers",
+										"value": "Authorization, Content-Type",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "Access-Control-Allow-Methods",
+										"value": "GET, POST, PUT, DELETE, OPTIONS",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://{{playerIpAddress}}/api/v1/download-firmware?url=https://brightsignnetwork.com/download/Firmware/pagani-8.2.17.3-update.bsfw",
+									"protocol": "http",
+									"host": [
+										"{{playerIpAddress}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"download-firmware"
+									],
+									"query": [
+										{
+											"key": "url",
+											"value": "https://brightsignnetwork.com/download/Firmware/pagani-8.2.17.3-update.bsfw"
+										}
+									]
+								},
+								"description": "**Tells the device to download and install firmware from the provided public url.**\n\n###### Query parameter:\n\nurl: The public url to fetch the firmware from.\n\n###### Response body:\n\n\\[bool\\] success: A flag indicating whether or not the operation succeeded.\n\n\\[bool\\] reboot: A flag indicating whether or not the device needs to be rebooted."
+							},
+							"response": []
+						},
+						{
+							"name": "/v1/fw-manifest-url",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {}
+							},
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Access-Control-Allow-Origin",
+										"value": "*",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "Access-Control-Allow-Headers",
+										"value": "Authorization, Content-Type",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "Access-Control-Allow-Methods",
+										"value": "GET, POST, PUT, DELETE, OPTIONS",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"url": "http://{{playerIpAddress}}/api/v1/fw-manifest-url",
+								"description": "**Returns the device's firmware manifest.**\n\n###### Response body:\n\n\\[string\\] result: The firmware manifest url."
+							},
+							"response": []
+						},
+						{
+							"name": "/v1/info",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {}
+							},
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Access-Control-Allow-Origin",
+										"value": "*",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "Access-Control-Allow-Headers",
+										"value": "Authorization, Content-Type",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "Access-Control-Allow-Methods",
+										"value": "GET, POST, PUT, DELETE, OPTIONS",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"url": "http://{{playerIpAddress}}/api/v1/info",
+								"description": "**Returns a complete list of device information ( including information not displayed on the dws info tab ).**"
+							},
+							"response": []
+						},
+						{
+							"name": "/v1/time",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {}
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"url": "http://{{playerIpAddress}}/api/v1/time",
+								"description": "**Returns the devices current time and timezone.**\n\n###### Response body:\n\n\\[string\\] time: Date time as a string.\n\n\\[string\\] timezone_name: The full name of the timezone.\n\n\\[string\\] timezone_abbr: Timezone shorthand.\n\n\\[int\\] year\n\n\\[int\\] month\n\n\\[int\\] date\n\n\\[int\\] hour\n\n\\[int\\] minute\n\n\\[int\\] second\n\n\\[int\\] millisecond"
+							},
+							"response": []
+						},
+						{
+							"name": "/v1/time",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {}
+							},
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Access-Control-Allow-Origin",
+										"value": "*",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "Access-Control-Allow-Headers",
+										"value": "Authorization, Content-Type",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "Access-Control-Allow-Methods",
+										"value": "GET, POST, PUT, DELETE, OPTIONS",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"time\": \"01:23:22 GMT\",\n    \"date\": \"2021:04:13\",\n    \"applyTimezone\": true\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://{{playerIpAddress}}/api/v1/time",
+								"description": "**Changes the devices time and/or date.**\n\n###### Request Body:\n\n\\[string\\] time: The time to set on the player. Formatted as \"hh:mm:ss \"\n\n\\[string\\] date: The date to set on the player. Formatted as \"yyyy-mm-dd\"\n\n\\[bool\\] applyTimezone: A flag to specify whether data and time should be applied using the timezone configured on the player ( true ) or the UTC time zone (false)"
+							},
+							"response": []
+						},
+						{
+							"name": "/v1/video-mode",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {}
+							},
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Access-Control-Allow-Origin",
+										"value": "*",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "Access-Control-Allow-Headers",
+										"value": "Authorization, Content-Type",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "Access-Control-Allow-Methods",
+										"value": "GET, POST, PUT, DELETE, OPTIONS",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"url": "http://{{playerIpAddress}}/api/v1/video-mode",
+								"description": "**Returns the devices current video mode settings. This is the same as /v1/video/:connector/output/:device/mode.**"
+							},
+							"response": []
+						},
+						{
+							"name": "/v1/download-log-package",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {}
+							},
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Access-Control-Allow-Origin",
+										"value": "*",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "Access-Control-Allow-Headers",
+										"value": "Authorization, Content-Type",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "Access-Control-Allow-Methods",
+										"value": "GET, POST, PUT, DELETE, OPTIONS",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"url": "http://{{playerIpAddress}}/api/v1/download-log-package",
+								"description": "**Returns the device serial log and crash-dumps as a zip file encoded as binary.**\n\nIn a browser this will auto-download. Using a utility like cURL you would need to pipe the output to file and then use a utility like unzip to extract the files:\n\n``` bash\ncurl --location --request GET 'http://{{ipAddress}}/api/v1/download-log-package' \\\n--header 'x-api-key: {{x-api-key}}' > logs.zip\n\nunzip logs.zip\n```\n\nThe above command will produce dmesg.log which is the device log as well as the directory crash-dump.\n\ncrash-dump contains two files:\n\ncrash-dump.info: A file containing device information\n\ncrash-dump.tar.bz2: A compressed file consisting of info ( same as crash-dump.info ) dmesg ( device serial log ) and lastkmsg ( kernel log )."
+							},
+							"response": []
+						},
+						{
+							"name": "/v1/snapshot",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {}
+							},
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Access-Control-Allow-Origin",
+										"value": "*",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "Access-Control-Allow-Headers",
+										"value": "Authorization, Content-Type",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "Access-Control-Allow-Methods",
+										"value": "GET, POST, PUT, DELETE, OPTIONS",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"url": "http://{{playerIpAddress}}/api/v1/snapshot",
+								"description": "**Instructs the device to take a screenshot**\n\n###### Response body:\n\n\\[string\\] remoteSnapshotThumbnail: The screenshot thumbnail encoded as base64.\n\n\\[string\\] filename: The path and name of the screenshot.\n\n\\[string\\] timestamp: The date and time the screenshot was taken.\n\n\\[string\\] devicename: The 'nickname' given to the device on setup.\n\nAfter the screenshot has been taken it will become available in the remote_snapshots directory."
+							},
+							"response": []
+						},
+						{
+							"name": "/v1/crash-dump/*",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"url": "http://{{playerIpAddress}}/api/v1/crash-dump/crash-dump",
+								"description": "**Returns the specified crash dump as a zip file.**\n\n###### Response body:\n\n\\[CrashDump\\]\n\n\\[string\\] fileName: The name of the dump file zip.\n\n\\[string\\] fileContents: The dump file contents as a string\n\n\\[string\\] mimeType: The type of file.\n\n\\[/CrashDump\\]\n\n\\[bool\\] isRecent: A flag indicating whether or not this is the most recent crash dump.\n\n\\[\\[string\\]\\] crashDumpFiles: ?\n\n\\[CrashDump\\] crashDump: The crash dump zip and file information."
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "remoteview",
+					"item": [
+						{
+							"name": "/v1/remoteview/config",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"url": "http://{{playerIpAddress}}/api/v1/remoteview/config",
+								"description": "**Gets the current access url.**\n\n###### Response body:\n\n\\[string\\] accessUrl: The set access server."
+							},
+							"response": []
+						},
+						{
+							"name": "/v1/remoteview/config",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"accessURL\": \"\"}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://{{playerIpAddress}}/api/v1/remoteview/config",
+								"description": "**Sets the access url.**\n\n###### Request body:\n\n\\[string\\] accessUrl: The url for the access server.\n\n###### Response body:\n\n\\[string\\] accessUrl: The newly set access server url."
+							},
+							"response": []
+						},
+						{
+							"name": "/v1/remoteview/:source/view",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"url": "http://{{playerIpAddress}}/api/v1/remoteview/desktop/view",
+								"description": "**Returns an array of session ids.**\n\n###### Response body:\n\n\\[\\[string?\\]\\] views: Ids for active sessions."
+							},
+							"response": []
+						},
+						{
+							"name": "/v1/remoteview/:source/view",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"url": "http://{{playerIpAddress}}/api/v1/remoteview/desktop/view",
+								"description": "**Starts a new session and returns the session id.**"
+							},
+							"response": []
+						},
+						{
+							"name": "/v1/remoteview/:source/view/:id",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://{{playerIpAddress}}/api/v1/remoteview/desktop/view/:id",
+									"protocol": "http",
+									"host": [
+										"{{playerIpAddress}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"remoteview",
+										"desktop",
+										"view",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": null
+										}
+									]
+								},
+								"description": "**Returns information on a session using its session id.**\n\n###### Response body:\n\n\\[string\\] id: Session id.\n\n\\[string\\] mediaSource: This is always \"desktop\"\n\n\\[bool\\] available: Always true when session is active.\n\n\\[bool\\] viewing: A flag that indicates that the session is active. Will always be true."
+							},
+							"response": []
+						},
+						{
+							"name": "/v1/remoteview/desktop/view/:id",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://{{playerIpAddress}}/api/v1/remoteview/desktop/view/:id",
+									"protocol": "http",
+									"host": [
+										"{{playerIpAddress}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"remoteview",
+										"desktop",
+										"view",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": null
+										}
+									]
+								},
+								"description": "**Deletes an active session using its session id.**"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "storage",
+					"item": [
+						{
+							"name": "/v1/storage/:device",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {}
+							},
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Access-Control-Allow-Origin",
+										"value": "*",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "Access-Control-Allow-Headers",
+										"value": "Authorization, Content-Type",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "Access-Control-Allow-Methods",
+										"value": "GET, POST, PUT, DELETE, OPTIONS",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"fs\": \"ext4\"}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://{{playerIpAddress}}/api/v1/storage/sd",
+								"description": "**Formats the specified drive. Accepts any filesystem type supported by the device.**\n\n###### Request body:\n\n\\[string\\] fs: The filesystem type to use for formatting.\n\n###### Response body:\n\n\\[bool\\] success: A flag indicating whether or not the operation completed successfully.\n\n\\[string\\] output: Message regarding the format operation.\n\n\\[string\\] error: Error regarding the format operation. If it succeeded then this will be an empty string."
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "legacy",
+					"item": [
+						{
+							"name": "/v1/legacy/lldp",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"url": "http://{{playerIpAddress}}/api/v1/legacy/lldp",
+								"description": "**Returns link layer discovery protocol information as JSON.**"
+							},
+							"response": []
+						},
+						{
+							"name": "/v1/legacy/debug",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"url": "http://{{playerIpAddress}}/api/v1/legacy/debug",
+								"description": "**This does not appear to have a handler. Always returns a missing handler error.**"
+							},
+							"response": []
+						},
+						{
+							"name": "/v1/legacy/messages",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"url": "http://{{playerIpAddress}}/api/v1/legacy/messages",
+								"description": "**Returns the contents of /var/log/messages or logread.**"
+							},
+							"response": []
+						},
+						{
+							"name": "/v1/legacy/dmesg",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"url": "http://{{playerIpAddress}}/api/v1/legacy/dmesg",
+								"description": "**Returns dmesg output.**"
+							},
+							"response": []
+						},
+						{
+							"name": "/v1/legacy/processes",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"url": "http://{{playerIpAddress}}/api/v1/legacy/processes",
+								"description": "**Returns the results of ps.**"
+							},
+							"response": []
+						},
+						{
+							"name": "/v1/legacy/smart_report",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"url": "http://{{playerIpAddress}}/api/v1/legacy/smart_report",
+								"description": "**Returns the results of smartctl.**"
+							},
+							"response": []
+						},
+						{
+							"name": "/v1/legacy/ifconfig",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"url": "http://{{playerIpAddress}}/api/v1/legacy/ifconfig"
+							},
+							"response": []
+						},
+						{
+							"name": "/v1/legacy/lastring",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"url": "http://{{playerIpAddress}}/api/v1/legacy/lastring",
+								"description": "**Returns the contents of /dev/lastkmsg.**"
+							},
+							"response": []
+						},
+						{
+							"name": "/v1/legacy/lastkmsg",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"url": "http://{{playerIpAddress}}/api/v1/legacy/lastkmsg",
+								"description": "**Returns contents of /dev/lastkmsg.**"
+							},
+							"response": []
+						},
+						{
+							"name": "/v1/legacy/usb",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"url": "http://{{playerIpAddress}}/api/v1/legacy/usb",
+								"description": "**Returns usb information.**"
+							},
+							"response": []
+						},
+						{
+							"name": "/v1/legacy/network",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"url": "http://{{playerIpAddress}}/api/v1/legacy/network",
+								"description": "**Returns a dump of network information as well as the network registry section.**"
+							},
+							"response": []
+						},
+						{
+							"name": "/v1/legacy/netconfig",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"url": "http://{{playerIpAddress}}/api/v1/legacy/netconfig",
+								"description": "**Returns the current network configuration.**"
+							},
+							"response": []
+						},
+						{
+							"name": "/v1/legacy/ptp",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"url": "http://{{playerIpAddress}}/api/v1/legacy/ptp",
+								"description": "**Returns PTP status of PTP is enabled.**"
+							},
+							"response": []
+						},
+						{
+							"name": "/v1/legacy/edid",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"url": "http://{{playerIpAddress}}/api/v1/legacy/edid",
+								"description": "**Returns edid information.**"
+							},
+							"response": []
+						},
+						{
+							"name": "/v1/legacy/script_debug",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"url": "http://{{playerIpAddress}}/api/v1/legacy/script_debug",
+								"description": "**Returns the status of automatic script debugging.**"
+							},
+							"response": []
+						},
+						{
+							"name": "/v1/legacy/network_diagnostics",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"url": "http://{{playerIpAddress}}/api/v1/legacy/network_diagnostics"
+							},
+							"response": []
+						},
+						{
+							"name": "/v1/legacy/ping",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "http://{{playerIpAddress}}/api/v1/legacy/ping?dnsname=1.1.1.1",
+									"protocol": "http",
+									"host": [
+										"{{playerIpAddress}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"legacy",
+										"ping"
+									],
+									"query": [
+										{
+											"key": "ref",
+											"value": "diagnostics.html",
+											"disabled": true
+										},
+										{
+											"key": "dnsname",
+											"value": "1.1.1.1"
+										}
+									]
+								},
+								"description": "**Pings the specified IP and returns the result**\n\n***This currently does not work!*** According to the DebugPingDebugHandler as well as the diagnostics.template file, this should take a form-data parameter called dnsname with the value being the IP to ping.\n\nAll attempts thus far to get this working have failed.\n\nThe legacy dws takes this:\n\n[http://192.168.50.233/ping.html?ref=diagnostics.html&dnsname=1.1.1.1](http://192.168.50.233/?ref=diagnostics.html&dnsname=1.1.1.1)"
+							},
+							"response": []
+						},
+						{
+							"name": "/v1/legacy/dns_lookup",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://{{playerIpAddress}}/api/v1/legacy/dns_lookup?dnsname=1.1.1.1",
+									"protocol": "http",
+									"host": [
+										"{{playerIpAddress}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"legacy",
+										"dns_lookup"
+									],
+									"query": [
+										{
+											"key": "dnsname",
+											"value": "1.1.1.1"
+										}
+									]
+								},
+								"description": "**Checks DNS status and returns the results.**\n\n**Similar to /ping, this does not work!**\n\nLike /ping this should take dnsname as a query parameter. Currently, attempting to provide an IP will result in an EFAILED error. I have not managed to get this to work."
+							},
+							"response": []
+						},
+						{
+							"name": "/v1/legacy/traceroute",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://{{playerIpAddress}}/api/v1/legacy/traceroute?dnsname=1.1.1.1",
+									"protocol": "http",
+									"host": [
+										"{{playerIpAddress}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"legacy",
+										"traceroute"
+									],
+									"query": [
+										{
+											"key": "dnsname",
+											"value": "1.1.1.1"
+										}
+									]
+								},
+								"description": "**Runs traceroute on the specified ip address**\n\n**This does not work!**\n\nThe legacy DWS takes dnsname as a query paremeter to specify the ip address. This always returns EFAILED."
+							},
+							"response": []
+						},
+						{
+							"name": "/v1/legacy/tcp_connections",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"url": "http://{{playerIpAddress}}/api/v1/legacy/tcp_connections",
+								"description": "**Returns active connections to and from the device**"
+							},
+							"response": []
+						},
+						{
+							"name": "/v1/legacy/network_statistics",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"url": "http://{{playerIpAddress}}/api/v1/legacy/network_statistics",
+								"description": "**Returns network statistics information**"
+							},
+							"response": []
+						},
+						{
+							"name": "/v1/legacy/registry_dump",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"url": "http://{{playerIpAddress}}/api/v1/legacy/registry_dump",
+								"description": "**Returns a complete dump of the registry.**"
+							},
+							"response": []
+						},
+						{
+							"name": "/v1/legacy/device_data",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"url": "http://{{playerIpAddress}}/api/v1/legacy/device_data",
+								"description": "**Returns device information?**\n\nThe information retrieved is very cryptic and it's not entirely clear what it means."
+							},
+							"response": []
+						},
+						{
+							"name": "/v1/legacy/avs",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"url": "http://{{playerIpAddress}}/api/v1/legacy/avs",
+								"description": "**Returns audio video information?**\n\nThe info here, like device_data is very cryptic and it's not entirely clear what any of the returned info means."
+							},
+							"response": []
+						},
+						{
+							"name": "/v1/legacy/secure_boot",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"url": "http://{{playerIpAddress}}/api/v1/legacy/secure_boot",
+								"description": "**Returns secure boot status**"
+							},
+							"response": []
+						},
+						{
+							"name": "/v1/legacy/extensions",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"url": "http://{{playerIpAddress}}/api/v1/legacy/extensions",
+								"description": "**Returns extensions found on the device.**"
+							},
+							"response": []
+						},
+						{
+							"name": "/v1/legacy/crash_dump_present",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"url": "http://{{playerIpAddress}}/api/v1/legacy/crash_dump_present",
+								"description": "**Returns whether a crash dump is present on the device.**"
+							},
+							"response": []
+						},
+						{
+							"name": "/v1/legacy/dhcp-server",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"url": "http://{{playerIpAddress}}/api/v1/legacy/dhcp-server",
+								"description": "**Returns dhcp server information?**"
+							},
+							"response": []
+						},
+						{
+							"name": "/v1/legacy/contents",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://{{playerIpAddress}}/api/v1/legacy/contents",
+									"protocol": "http",
+									"host": [
+										"{{playerIpAddress}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"legacy",
+										"contents"
+									],
+									"query": [
+										{
+											"key": "device",
+											"value": "sd",
+											"disabled": true
+										}
+									]
+								},
+								"description": "**Returns information and contents of specified storage devices.**\n\nThis can take an optional, device, parameter that specifies a single device you want to get information/contents from.\n\nIf all is specified then it will output information for all storage devices. ( df ).\n\n**This currently does not work!**"
+							},
+							"response": []
+						},
+						{
+							"name": "/v1/legacy/storage_info",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://{{playerIpAddress}}/api/v1/legacy/storage_info",
+									"protocol": "http",
+									"host": [
+										"{{playerIpAddress}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"legacy",
+										"storage_info"
+									],
+									"query": [
+										{
+											"key": "device",
+											"value": "sd",
+											"disabled": true
+										}
+									]
+								},
+								"description": "**Returns information on the specified storage device**\n\nTakes a query parameter, device, that specifies the storage device to retrieve information on. If left blank then it defaults to sd\n\n**Specifying the device does not work right now!**"
+							},
+							"response": []
+						},
+						{
+							"name": "/v1/legacy/map",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://{{playerIpAddress}}/api/v1/legacy/map?exe=brightsign",
+									"protocol": "http",
+									"host": [
+										"{{playerIpAddress}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"legacy",
+										"map"
+									],
+									"query": [
+										{
+											"key": "exe",
+											"value": "brightsign"
+										}
+									]
+								},
+								"description": "**It's not clear what this does. It appears to search for a running executable/process in /proc.**\n\nThis takes a query parameter, exe, that specifies an executable/running process?\n\n**This does not work! Attempting to include exe will trigger a MIssing handler error.**"
+							},
+							"response": []
+						},
+						{
+							"name": "/v1/legacy/fd",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://{{playerIpAddress}}/api/v1/legacy/fd?exe=brightsign",
+									"protocol": "http",
+									"host": [
+										"{{playerIpAddress}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"legacy",
+										"fd"
+									],
+									"query": [
+										{
+											"key": "exe",
+											"value": "brightsign"
+										}
+									]
+								},
+								"description": "**It is unclear what this is meant to do. It appears to search for a process.**\n\nThis takes a query parameter, exe, that specifies an executable/running process.\n\n**This does not work!**"
+							},
+							"response": []
+						},
+						{
+							"name": "/v1/legacy/block",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://{{playerIpAddress}}/api/v1/legacy/block?dev=mmcblk0p1",
+									"protocol": "http",
+									"host": [
+										"{{playerIpAddress}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"legacy",
+										"block"
+									],
+									"query": [
+										{
+											"key": "dev",
+											"value": "mmcblk0p1"
+										}
+									]
+								},
+								"description": "**Returns information on the specified block device**\n\nTakes a query parameter, dev, that specifies the block device to get information on. If left blank it will attempt to return all block devices\n\n**Attempting to pass dev does not work!**"
+							},
+							"response": []
+						},
+						{
+							"name": "/v1/legacy/slabinfo",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"url": "http://{{playerIpAddress}}/api/v1/legacy/slabinfo",
+								"description": "**Returns cache statistics**"
+							},
+							"response": []
+						},
+						{
+							"name": "/v1/legacy/zoneinfo",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"url": "http://{{playerIpAddress}}/api/v1/legacy/zoneinfo",
+								"description": "**Returns information on memory zones.**"
+							},
+							"response": []
+						},
+						{
+							"name": "/v1/legacy/loadavg",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"url": "http://{{playerIpAddress}}/api/v1/legacy/loadavg",
+								"description": "**Returns loadavg info**"
+							},
+							"response": []
+						},
+						{
+							"name": "/v1/legacy/meminfo",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"url": "http://{{playerIpAddress}}/api/v1/legacy/meminfo",
+								"description": "**Returns memory information in JSON format.**"
+							},
+							"response": []
+						},
+						{
+							"name": "/v1/legacy/stat",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"url": "http://{{playerIpAddress}}/api/v1/legacy/stat",
+								"description": "**Returns kernel/system statistics.**"
+							},
+							"response": []
+						},
+						{
+							"name": "/v1/legacy/vmstat",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"url": "http://{{playerIpAddress}}/api/v1/legacy/vmstat",
+								"description": "**Returns virtual memory statistics.**"
+							},
+							"response": []
+						},
+						{
+							"name": "/v1/legacy/interrupts",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"url": "http://{{playerIpAddress}}/api/v1/legacy/interrupts",
+								"description": "**Returns interrupt information.**"
+							},
+							"response": []
+						},
+						{
+							"name": "/v1/legacy/version",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"url": "http://{{playerIpAddress}}/api/v1/legacy/version",
+								"description": "**Returns Linux version information.**"
+							},
+							"response": []
+						},
+						{
+							"name": "/v1/legacy/boardid",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"url": "http://{{playerIpAddress}}/api/v1/legacy/boardid",
+								"description": "**Returns board information**"
+							},
+							"response": []
+						},
+						{
+							"name": "/v1/legacy/bvn",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"url": "http://{{playerIpAddress}}/api/v1/legacy/bvn",
+								"description": "**Returns a dump of all components?**"
+							},
+							"response": []
+						},
+						{
+							"name": "/v1/legacy/bvnall",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"url": "http://{{playerIpAddress}}/api/v1/legacy/bvnall",
+								"description": "**Returns a dump of the registers for all components.**"
+							},
+							"response": []
+						},
+						{
+							"name": "/v1/legacy/edid_raw",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "type",
+											"value": "hdmi",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://{{playerIpAddress}}/api/v1/legacy/edid_raw",
+									"protocol": "http",
+									"host": [
+										"{{playerIpAddress}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"legacy",
+										"edid_raw"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								},
+								"description": "**Returns raw edid information**\n\nThis does not currently work. It claims that it is missing a handler but a handler does exist for it in httpd. It's not clear what is broken."
+							},
+							"response": []
+						},
+						{
+							"name": "/v1/legacy/ca_certificates",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "{{x-api-key}}",
+										"value": "",
+										"type": "text"
+									}
+								],
+								"url": "http://{{playerIpAddress}}/api/v1/legacy/ca_certificates",
+								"description": "**Returns the ca certificate stored on the device**\n\nThis currently does not work. The handler appears to exist in httpd but the return for this claims it is missing. It's not clear what is broken."
+							},
+							"response": []
+						}
+					],
+					"description": "**Legacy ldws endpoints**\n\nThese legacy endpoints are *mostly* equivalent to the non-legacy endpoints. The primary difference is that rather than returning a JSON object with all of the information, it returns a raw string ( this is true of most but not all of these endpoint ).\n\nIn most cases these endpoints shouldn't be needed since there should be a non-legacy equivalent that returns info in a format that is easier to parse.\n\nIt should be noted that certain legacy endpoints show up in /v1/ but are not documented here because they have a javascript equivalent or do not have a handler. These endpoints are:\n\n/v1/legacy/packet_capture and /v1/legacy/powersave"
+				}
+			],
+			"description": "**BAcon LDWS endpoints**\n\n###### Use instructions:\n\n**All variables are stored in the collections scope.** To view the variables used, click on the Local_dws folder and click on the 'Variables' tab.\n\nMake sure a valid player IP, username and password are present.\n\n**Make sure you run /keys.json first.** This will retrieve the x-api-key for the device and store it in the x-api-key variable. This will be used for authentication for the rest of the requests.\n\n**If you do not want to use the x-api-key you can either remove the player password or on a request by request basis set the authentication method to digest and have it use the username and password stored in the username and password variables.**"
+		},
+		{
+			"name": "Legacy_DWS",
+			"item": [
+				{
+					"name": "Legacy_html",
+					"item": [
+						{
+							"name": "/network_diagnostics.html?ref=diagnostics.html",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://{{playerIpAddress}}/network_diagnostics.html?ref=diagnostics.html",
+									"protocol": "http",
+									"host": [
+										"{{playerIpAddress}}"
+									],
+									"path": [
+										"network_diagnostics.html"
+									],
+									"query": [
+										{
+											"key": "ref",
+											"value": "diagnostics.html"
+										}
+									]
+								},
+								"description": "**Network diagnostics information.**"
+							},
+							"response": []
+						},
+						{
+							"name": "/network_diagnostics.html",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "http://{{playerIpAddress}}/network_diagnostics.html"
+							},
+							"response": []
+						},
+						{
+							"name": "/storage.html?rp=sd",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://{{playerIpAddress}}/storage.html?rp=sd",
+									"protocol": "http",
+									"host": [
+										"{{playerIpAddress}}"
+									],
+									"path": [
+										"storage.html"
+									],
+									"query": [
+										{
+											"key": "rp",
+											"value": "sd"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/index.html",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "http://{{playerIpAddress}}/index.html"
+							},
+							"response": []
+						},
+						{
+							"name": "/log.html",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "http://{{playerIpAddress}}/log.html"
+							},
+							"response": []
+						},
+						{
+							"name": "/control.html",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "http://{{playerIpAddress}}/control.html"
+							},
+							"response": []
+						},
+						{
+							"name": "/action.html?reboot=Reboot",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://{{playerIpAddress}}/action.html?reboot=Reboot",
+									"protocol": "http",
+									"host": [
+										"{{playerIpAddress}}"
+									],
+									"path": [
+										"action.html"
+									],
+									"query": [
+										{
+											"key": "reboot",
+											"value": "Reboot"
+										}
+									]
+								},
+								"description": "**Triggers a device reboot.**"
+							},
+							"response": []
+						},
+						{
+							"name": "/lldp.html",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "http://{{playerIpAddress}}/lldp.html",
+								"description": "**Returns lldp information.**"
+							},
+							"response": []
+						},
+						{
+							"name": "/ping.html",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "http://{{playerIpAddress}}/ping.html?ref=diagnostics.html&dnsname=1.1.1.1",
+									"protocol": "http",
+									"host": [
+										"{{playerIpAddress}}"
+									],
+									"path": [
+										"ping.html"
+									],
+									"query": [
+										{
+											"key": "ref",
+											"value": "diagnostics.html"
+										},
+										{
+											"key": "dnsname",
+											"value": "1.1.1.1"
+										}
+									]
+								},
+								"description": "**Pings the IP address specified by the query parameter dnsname.**"
+							},
+							"response": []
+						},
+						{
+							"name": "/dns_lookup.html",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://{{playerIpAddress}}/dns_lookup.html?ref=diagnostics.html&dnsname=1.1.1.1",
+									"protocol": "http",
+									"host": [
+										"{{playerIpAddress}}"
+									],
+									"path": [
+										"dns_lookup.html"
+									],
+									"query": [
+										{
+											"key": "ref",
+											"value": "diagnostics.html"
+										},
+										{
+											"key": "dnsname",
+											"value": "1.1.1.1"
+										}
+									]
+								},
+								"description": "**Returns the results of a dns lookup against the passed ip.**"
+							},
+							"response": []
+						},
+						{
+							"name": "/traceroute.html",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://{{playerIpAddress}}/traceroute.html?ref=diagnostics.html&dnsname=1.1.1.1",
+									"protocol": "http",
+									"host": [
+										"{{playerIpAddress}}"
+									],
+									"path": [
+										"traceroute.html"
+									],
+									"query": [
+										{
+											"key": "ref",
+											"value": "diagnostics.html"
+										},
+										{
+											"key": "dnsname",
+											"value": "1.1.1.1"
+										}
+									]
+								},
+								"description": "**Returns the result of traceroute run against the passed ip.**"
+							},
+							"response": []
+						},
+						{
+							"name": "/tcp_connections.html",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "http://{{playerIpAddress}}/tcp_connections.html",
+								"description": "**Returns active internet connections.**"
+							},
+							"response": []
+						},
+						{
+							"name": "/powersave.html",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "http://{{playerIpAddress}}/powersave.html",
+								"description": "**This does absolutely nothing. It's hard coded to always return \"Not supported\"**"
+							},
+							"response": []
+						},
+						{
+							"name": "/packet_capture.html",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://{{playerIpAddress}}/packet_capture.html?interface=eth0&file=cap.pcap&duration=10&maxpackets=0&snaplen=0&action=Stop&filter=tcp port 80",
+									"protocol": "http",
+									"host": [
+										"{{playerIpAddress}}"
+									],
+									"path": [
+										"packet_capture.html"
+									],
+									"query": [
+										{
+											"key": "interface",
+											"value": "eth0"
+										},
+										{
+											"key": "file",
+											"value": "cap.pcap"
+										},
+										{
+											"key": "duration",
+											"value": "10"
+										},
+										{
+											"key": "maxpackets",
+											"value": "0"
+										},
+										{
+											"key": "snaplen",
+											"value": "0"
+										},
+										{
+											"key": "action",
+											"value": "Start",
+											"disabled": true
+										},
+										{
+											"key": "action",
+											"value": "Stop"
+										},
+										{
+											"key": "action",
+											"value": "Refresh",
+											"disabled": true
+										},
+										{
+											"key": "filter",
+											"value": "tcp port 80"
+										}
+									]
+								},
+								"description": "**Starts, stops or refreshes a packet capture**\n\nThis takes many arguments:\n\ninterface: The interface to capture on.\n\nfile: The name of the file to save to.\n\nduration: The duration in seconds to capture for.\n\nmaxpackets: The maximum number of packets to capture. Default is 0 which is no limit.\n\nsnaplen: The maximum packet size. Default is 0 which is no max size.\n\nfilter: A pcap filter expression to be used in the capture.\n\naction: The action to take. This can be one of three values:\n\n1.) Start - Starts a packet capture\n\n2.) Stop - Stops a running packet capture\n\n3.) Refresh - Refreshes the page with the current packet capture status."
+							},
+							"response": []
+						},
+						{
+							"name": "/messages.html",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "http://{{playerIpAddress}}/messages.html"
+							},
+							"response": []
+						}
+					],
+					"description": "**Legacy DWS API's.**\n\nThis is only available if bbhf has been set to off in the registry. This will disable the BSN LDWS and re-enable the legacy DWS.\n\nTo turn this on go to the brightsign prompt and enter:\n\n```\nregistry write networking bbhf off\n```\n\nAfter rebooting, the device should now use the legacy DWS.\n\nTo re-enable the BSN LDWS enter:\n\n```\nregistry write networking bbhf on\n```"
+				},
+				{
+					"name": "Legacy_xml",
+					"item": [
+						{
+							"name": "/index.xml",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "http://{{playerIpAddress}}/index.xml",
+								"description": "**Returns device information in xml format.**"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Legacy_endpoints",
+					"item": [
+						{
+							"name": "/view",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "http://{{playerIpAddress}}/view?rp=sd/autorun.brs",
+									"protocol": "http",
+									"host": [
+										"{{playerIpAddress}}"
+									],
+									"path": [
+										"view"
+									],
+									"query": [
+										{
+											"key": "rp",
+											"value": "sd/autorun.brs"
+										}
+									]
+								},
+								"description": "**Returns the contents of a file.**\n\nTakes a query parameter, rp, specifying the device to use followed by a path specifying the file."
+							},
+							"response": []
+						},
+						{
+							"name": "/save",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://{{playerIpAddress}}/save?rp=sd/autorun.brs",
+									"protocol": "http",
+									"host": [
+										"{{playerIpAddress}}"
+									],
+									"path": [
+										"save"
+									],
+									"query": [
+										{
+											"key": "rp",
+											"value": "sd/autorun.brs"
+										}
+									]
+								},
+								"description": "**Triggers a file download when used from the browser. Returns file contents when used from postman.**\n\nTakes a query parameter, rp, that specifies the storage device to use followed by a path specifying the file."
+							},
+							"response": []
+						},
+						{
+							"name": "/rename",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://{{playerIpAddress}}/rename?origfile=sd/autorun.brs&filename=autorun2.brs&rename=Rename",
+									"protocol": "http",
+									"host": [
+										"{{playerIpAddress}}"
+									],
+									"path": [
+										"rename"
+									],
+									"query": [
+										{
+											"key": "origfile",
+											"value": "sd/autorun.brs"
+										},
+										{
+											"key": "filename",
+											"value": "autorun2.brs"
+										},
+										{
+											"key": "rename",
+											"value": "Rename"
+										}
+									]
+								},
+								"description": "**Renames specified file.**\n\nTakes a number of query parameters:\n\norigfile: The path and file name\n\nfilename: The new file name\n\nrename: Should always be Rename."
+							},
+							"response": []
+						},
+						{
+							"name": "/delete",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://{{playerIpAddress}}/delete?filename=sd/autorun.brs&delete=Delete",
+									"protocol": "http",
+									"host": [
+										"{{playerIpAddress}}"
+									],
+									"path": [
+										"delete"
+									],
+									"query": [
+										{
+											"key": "filename",
+											"value": "sd/autorun.brs"
+										},
+										{
+											"key": "delete",
+											"value": "Delete"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/syncspec",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://{{playerIpAddress}}/syncspec?filename=sd/autorun2.brs",
+									"protocol": "http",
+									"host": [
+										"{{playerIpAddress}}"
+									],
+									"path": [
+										"syncspec"
+									],
+									"query": [
+										{
+											"key": "filename",
+											"value": "sd/autorun2.brs"
+										}
+									]
+								},
+								"description": "**Adds syncspec info to the specified file.**\n\nTakes a query parameter:\n\nfilename: The path and name of the file"
+							},
+							"response": []
+						},
+						{
+							"name": "/analyze",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://{{playerIpAddress}}/analyze?rp=sd/look.mp4",
+									"protocol": "http",
+									"host": [
+										"{{playerIpAddress}}"
+									],
+									"path": [
+										"analyze"
+									],
+									"query": [
+										{
+											"key": "rp",
+											"value": "sd/look.mp4"
+										}
+									]
+								},
+								"description": "**Analyzes specified media file and returns the results**\n\nTakes query parameter:\n\nrp: The path and file name\n\nsha1: The path and sha1 hash\n\nOnly rp or sha1 should be used. Attempting to use both will not do anything."
+							},
+							"response": []
+						},
+						{
+							"name": "/crash_dump",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "http://{{playerIpAddress}}/crash_dump"
+							},
+							"response": []
+						},
+						{
+							"name": "/download_log",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "http://{{playerIpAddress}}/download_log"
+							},
+							"response": []
+						},
+						{
+							"name": "/set_password",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "password1",
+											"value": "{{password}}",
+											"type": "text"
+										},
+										{
+											"key": "password2",
+											"value": "{{password}}",
+											"type": "text"
+										}
+									]
+								},
+								"url": "http://{{playerIpAddress}}/set_password",
+								"description": "**Sets the password.**\n\nTakes an x-www-form-urlencoded body containing:\n\npassword1: The new password\n\npassword2: The new password. Should match password1"
+							},
+							"response": []
+						},
+						{
+							"name": "/clear_password",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "current_password",
+											"value": "{{password}}",
+											"type": "text"
+										}
+									]
+								},
+								"url": "http://{{playerIpAddress}}/clear_password",
+								"description": "**Clears the currently set password.**\n\nTakes an x-www-form-urlencoded body containing:\n\ncurrent_password: The currently set password."
+							},
+							"response": []
+						},
+						{
+							"name": "/autorun",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://{{playerIpAddress}}/autorun?filename=sd/autorun2.brs&action=replace",
+									"protocol": "http",
+									"host": [
+										"{{playerIpAddress}}"
+									],
+									"path": [
+										"autorun"
+									],
+									"query": [
+										{
+											"key": "filename",
+											"value": "sd/autorun2.brs"
+										},
+										{
+											"key": "action",
+											"value": "replace"
+										}
+									]
+								},
+								"description": "**Sets the specified file to be interpreted as a diagnostics script and restarts the script engine.**\n\nTakes two query parameters:\n\nfilename: The path and name of the file\n\naction: The type of diagnostic script it should be interpreted as. This takes a few vales:\n\nscreen: Cycle through all videomodes and display something to screen\n\ncontent: Plays back an item using a custom autorun ( in all modes )\n\nplayback: Plays back an item using a custom autorun\n\nscan: Runs a channel scan.\n\nreplace: replaces diagnostics script with the specified autorun."
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Legacy_txt",
+					"item": [
+						{
+							"name": "/robots.txt",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "http://{{playerIpAddress}}/robots.txt",
+								"description": "**Handler for web robots so that units connected to the internet don't get included in searches.**"
+							},
+							"response": []
+						},
+						{
+							"name": "/lldp.txt",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "http://{{playerIpAddress}}/lldp.txt",
+								"description": "**lldp information in text format.**"
+							},
+							"response": []
+						}
+					]
+				}
+			],
+			"auth": {
+				"type": "digest",
+				"digest": {
+					"password": "{{password}}",
+					"username": "{{username}}",
+					"algorithm": "MD5"
+				}
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "playerIpAddress",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "x-api-key",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "username",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "password",
+			"value": "",
+			"type": "string"
+		}
+	]
+}

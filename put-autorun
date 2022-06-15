@@ -1,0 +1,7 @@
+curl -s "http://$1/keys.json" --digest -u admin:D7E993001947 > token.json
+KEY=$(jq -r .key token.json)
+curl -s --location --request PUT "http://$1/api/v1/files/sd" --header 'x-api-key: $KEY' --form '=@"./autorun.brs"' | jq .
+curl -s --location --request PUT "http://$1/api/v1/control/reboot" --header 'x-api-key: $KEY' | jq .
+rm token.json
+
+ 
